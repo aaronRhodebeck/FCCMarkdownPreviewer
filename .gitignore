@@ -49,3 +49,6 @@ Temporary Items
 
 # Node.js
 node_modules/
+
+#Logs
+*.log
