@@ -1,5 +1,7 @@
 import React from 'react';
 
-export class App extends React.Component {
-    return <h1> Hello World </h1>;
+export class Hello extends React.Component {
+    render() {
+        return <h1> Hello World </h1>;        
+    }
 }
