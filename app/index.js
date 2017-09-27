@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Hello } from './components/app';
+import { App } from './components/app';
 
 ReactDOM.render( 
-    <Hello /> , document.getElementById('app')
+    <App /> , document.getElementById('app')
 );
