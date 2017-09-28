@@ -4,11 +4,11 @@ import { Editor } from '../components/Editor';
 export class EditorContainer extends React.Component {
     constructor() {
         super();
-        this.state = {value: ""}
+        this.state = {text: ""}
         this.textHasChanged = this.textHasChanged.bind(this);
     }
     textHasChanged(e) {
-        this.setState({value: e.target.value});
+        this.setState({text: e.target.value});
     }
 
     render() {
