@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Editor } from '../components/Editor';
+import { EditorContainer } from './EditorContainer';
 import { PreviewPane } from '../components/PreviewPane';
+import * as Cheatsheet from '../markdownCheatsheet.js';
 import marked from 'marked';
 
 var styles = {
@@ -12,10 +13,11 @@ export class App extends React.Component {
     convertMarkdown() {
 
     }
+
     render() {
         return (
             <div style={styles}>
-                <Editor />
+                <EditorContainer markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()} />
                 <PreviewPane />
             </div>
         );

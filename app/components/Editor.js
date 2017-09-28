@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Cheatsheet from '../markdownCheatsheet.js';
 
 var styles = {
     flex: 1,
@@ -16,7 +15,8 @@ export class Editor extends React.Component {
                 <textarea 
                     style={styles}
                     id='editor'
-                    defaultValue={Cheatsheet.getFormattedCheatsheet()}>                    
+                    defaultValue={this.props.startingText}
+                    onChange={this.props.onChange}>                    
                 </textarea>
         )
     }
