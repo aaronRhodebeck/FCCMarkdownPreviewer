@@ -2,8 +2,8 @@ import React from 'react';
 
 var styles = {
     flex: 1,
-    height: '96vh',
-    overflow: 'auto'
+    height: '100vh',
+    overflow: 'auto',
 }
 
 export class PreviewPane extends React.Component {
