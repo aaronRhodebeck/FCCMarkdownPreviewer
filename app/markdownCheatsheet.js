@@ -19,7 +19,7 @@ export var markdownCheatsheet = {
     code: `
 \`\`\`javascript
 function codeBlock(param) {
-    console.log('This is a code block w/ sytax highlighting')
+    console.log('This is a code block w/ syntax highlighting')
 }
 \`\`\``,
 }
