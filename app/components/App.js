@@ -4,7 +4,7 @@ import { Editor } from './Editor';
 import { PreviewPane } from './PreviewPane';
 
 var styles = {
-    display: 'flex'
+    display: 'flex',
 }
 
 export class App extends React.Component {
