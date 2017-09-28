@@ -9,6 +9,7 @@ export class EditorContainer extends React.Component {
     }
     textHasChanged(e) {
         this.setState({text: e.target.value});
+        this.props.textHasChanged(this.state.text);
     }
 
     render() {

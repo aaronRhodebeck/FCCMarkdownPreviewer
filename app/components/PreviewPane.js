@@ -9,8 +9,10 @@ var styles = {
 export class PreviewPane extends React.Component {
     render() {
         return (
-            <div style={styles} id='preview'>
-                <h1>Preview</h1>
+            <div
+                style={styles} 
+                id='preview' 
+                dangerouslySetInnerHTML={this.props.text}>
             </div>
         )
     }
