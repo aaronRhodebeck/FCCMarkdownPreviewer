@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Editor } from './Editor';
-import { PreviewPane } from './PreviewPane';
+import { Editor } from '../components/Editor';
+import { PreviewPane } from '../components/PreviewPane';
 
 var styles = {
     display: 'flex',
