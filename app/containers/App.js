@@ -43,6 +43,7 @@ export class App extends React.Component {
     }
 
     convertToHTML(markdown) {
+        // Runs the text passed in through the marked renderer and returns html
         return {__html: marked(markdown)};
     }
 
@@ -50,7 +51,7 @@ export class App extends React.Component {
         return (
             <div style={styles}>
                 <EditorContainer
-                    markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()}
+                    markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()} {/* Passes the markdownCheatsheet to the Editor for default text*/}
                     textHasChanged={this.editorTextChanged} />
                 <PreviewPane text={this.state.htmlToDisplay}/>
             </div>
