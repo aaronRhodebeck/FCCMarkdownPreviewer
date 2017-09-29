@@ -4,17 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>FCC Markdown Previewer</title>
-    <link rel="stylesheet"
-    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Mukta+Malar');
         body {
             margin: 0;
             height: 100%;
-            width: 100%
+            width: 100%;
+            font-family: 'Mukta Malar';
         }
+        
         img {
             max-block-size: 100px;
             display: inline;
+        }
+        
+        code {
+            display: block;
+            padding: 5px;
+            overflow-x: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-decoration: underline;
+            margin-bottom: -10px;
         }
     </style>
     <script src="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js"></script>
