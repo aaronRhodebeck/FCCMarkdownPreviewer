@@ -9,8 +9,18 @@ import highlight from 'highlightjs';
 // Create a custom renderer for markdown
 var renderer = new marked.Renderer();
 renderer.link = function (href, title, text) {
+    href = checkForHTTP(href);
     return `<a href="${href}" target="_blank" title="${title}">${text}</a>`
+    
+    function checkForHTTP (href) {
+        let webPrefix = new RegExp('^(http|https)://')
+        if (!href.match(webPrefix)) {
+            href = 'http://' + href;
+        }
+        return href
+    }
 }
+
 marked.setOptions({
     renderer: renderer,
     gfm: true,
