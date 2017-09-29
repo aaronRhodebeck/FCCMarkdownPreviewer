@@ -4,6 +4,26 @@ import { EditorContainer } from './EditorContainer';
 import { PreviewPane } from '../components/PreviewPane';
 import * as Cheatsheet from '../markdownCheatsheet.js';
 import marked from 'marked';
+import highlight from 'highlightjs';
+
+var renderer = new marked.Renderer();
+renderer.link = function (href, title, text) {
+    return `<a href="${href}" target="_blank" title="${title}">${text}</a>`
+}
+marked.setOptions({
+    renderer: renderer,
+    gfm: true,
+    tables: true,
+    breaks: true,
+    pedantic: false,
+    sanitize: true,
+    smartLists: true,
+    smartypants: false,
+    highlight: function (code) {
+        return highlight.highlightAuto(code).value;
+    }
+})
+
 
 var styles = {
     display: 'flex',
