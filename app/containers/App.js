@@ -50,8 +50,9 @@ export class App extends React.Component {
     render() {
         return (
             <div style={styles}>
+                {/* Passes the markdownCheatsheet to the Editor for default text */}
                 <EditorContainer
-                    markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()} {/* Passes the markdownCheatsheet to the Editor for default text*/}
+                    markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()} 
                     textHasChanged={this.editorTextChanged} />
                 <PreviewPane text={this.state.htmlToDisplay}/>
             </div>
