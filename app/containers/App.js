@@ -42,6 +42,7 @@ marked.setOptions({
 // Styling for the div containing both components of the app
 var styles = {
     display: 'flex',
+    height: '100vh'
 }
 
 // Renders the Editor and Previewer

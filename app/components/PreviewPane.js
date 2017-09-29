@@ -2,7 +2,6 @@ import React from 'react';
 
 var styles = {
     flex: 1,
-    height: '100vh',
     overflow: 'auto',
     padding: 13,
     boxSizing: 'border-box',
