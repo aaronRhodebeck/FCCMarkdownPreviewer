@@ -6,13 +6,14 @@ var styles = {
     overflow: 'auto',
 }
 
+// Presentation class to display passed in HTML requiring text
 export class PreviewPane extends React.Component {
     render() {
         return (
             <div
                 style={styles} 
                 id='preview' 
-                dangerouslySetInnerHTML={this.props.text}>
+                dangerouslySetInnerHTML={this.props.html}>
             </div>
         )
     }

@@ -54,7 +54,7 @@ export class App extends React.Component {
                 <EditorContainer
                     markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()} 
                     textHasChanged={this.editorTextChanged} />
-                <PreviewPane text={this.state.htmlToDisplay}/>
+                <PreviewPane html={this.state.htmlToDisplay}/>
             </div>
         );
     }
