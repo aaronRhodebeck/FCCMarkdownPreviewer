@@ -12,17 +12,17 @@ var styles = {
 export class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {editorText: "", htmlToDisplay: ""};
+        this.state = {editorText: "", htmlToDisplay: {__html: `<h1>Preview</h1>`}};
         this.editorTextChanged = this.editorTextChanged.bind(this);
     }
 
     editorTextChanged(textInEditor) {
         this.setState({editorText: textInEditor});
-        this.setState({htmlToDisplay: this.convertToHTML(this.state.editorText)});
+        this.setState({htmlToDisplay: this.convertToHTML(textInEditor)});
     }
 
     convertToHTML(markdown) {
-        return {__html: `<p>Test</p>`}
+        return {__html: marked(markdown)};
     }
 
     render() {
@@ -31,7 +31,7 @@ export class App extends React.Component {
                 <EditorContainer
                     markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()}
                     textHasChanged={this.editorTextChanged} />
-                <PreviewPane text={this.convertToHTML('')}/>
+                <PreviewPane text={this.state.htmlToDisplay}/>
             </div>
         );
     }
