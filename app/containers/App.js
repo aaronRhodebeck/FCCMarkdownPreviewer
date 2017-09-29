@@ -34,12 +34,11 @@ var styles = {
 export class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {editorText: "", htmlToDisplay: {__html: `<h1>Preview</h1>`}};
+        this.state = {htmlToDisplay: {__html: `<h1>Preview</h1>`}};
         this.editorTextChanged = this.editorTextChanged.bind(this);
     }
     
     editorTextChanged(textInEditor) {
-        this.setState({editorText: textInEditor});
         this.setState({htmlToDisplay: this.convertToHTML(textInEditor)});
     }
 
