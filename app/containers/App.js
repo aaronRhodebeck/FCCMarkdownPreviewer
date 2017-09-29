@@ -8,11 +8,13 @@ import highlight from 'highlightjs';
 
 // Create a custom renderer for markdown
 var renderer = new marked.Renderer();
+
+// Change behavior of link to open in new window and add http if missing
 renderer.link = function (href, title, text) {
-    href = checkForHTTP(href);
+    href = addHttpIfMissing(href);
     return `<a href="${href}" target="_blank" title="${title}">${text}</a>`
     
-    function checkForHTTP (href) {
+    function addHttpIfMissing (href) {
         let webPrefix = new RegExp('^(http|https)://')
         if (!href.match(webPrefix)) {
             href = 'http://' + href;
@@ -21,6 +23,8 @@ renderer.link = function (href, title, text) {
     }
 }
 
+// Setup options for the marked markdown renderer
+// Info at https://www.npmjs.com/package/marked
 marked.setOptions({
     renderer: renderer,
     gfm: true,
