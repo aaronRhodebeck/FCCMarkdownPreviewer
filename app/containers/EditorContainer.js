@@ -6,6 +6,14 @@ export class EditorContainer extends React.Component {
         super(props);
         this.state = {text: this.props.markdownCheatsheet}
         this.textHasChanged = this.textHasChanged.bind(this);
+        this.clearDefaultText = this.clearDefaultText.bind(this);
+    }
+
+    clearDefaultText(e) {
+        if (this.state.text === this.props.markdownCheatsheet) {
+            e.target.value = "";
+            this.textHasChanged(e);            
+        }
     }
 
     textHasChanged(e) {
@@ -20,6 +28,7 @@ export class EditorContainer extends React.Component {
     render() {
         return <Editor 
                     startingText={this.state.text}
-                    onChange={this.textHasChanged} />;
+                    onChange={this.textHasChanged}
+                    onFocus={this.clearDefaultText} />;
     }
 }

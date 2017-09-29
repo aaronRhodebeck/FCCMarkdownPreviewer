@@ -16,7 +16,8 @@ export class Editor extends React.Component {
                     style={styles}
                     id='editor'
                     defaultValue={this.props.startingText}
-                    onChange={this.props.onChange}>                    
+                    onChange={this.props.onChange}
+                    onFocus={this.props.onFocus}>                    
                 </textarea>
         )
     }
