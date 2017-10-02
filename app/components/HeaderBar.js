@@ -3,9 +3,10 @@ import React from "react";
 let sharedStyles = {
   display: "flex",
   textAlign: "center",
-  height: 50,
-  marginTop: -18,
-  marginBottom: -10
+  marginTop: -15,
+  marginBottom: -30,
+  fontFamily: "Caveat",
+  fontSize: "1.3em"
 };
 
 let editorBarStyles = {
@@ -25,7 +26,9 @@ let editorTitleStyles = {
   color: "#777069"
 };
 
-let previewTitleStyles = {};
+let previewTitleStyles = {
+  color: "#696977"
+};
 
 export class HeaderBar extends React.Component {
   render() {
