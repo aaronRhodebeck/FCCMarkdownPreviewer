@@ -17,7 +17,7 @@ let styles = {
 export class EditorHeaderButton extends React.Component {
   render() {
     return (
-      <button style={styles}>
+      <button style={styles} onClick={this.props.onClick}>
         Markup <br /> Cheatsheet
       </button>
     );
