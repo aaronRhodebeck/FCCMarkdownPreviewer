@@ -1,17 +1,19 @@
 import React from "react";
+import { EditorHeaderButton } from "./EditorHeaderButton";
 
 let sharedStyles = {
   display: "flex",
   textAlign: "center",
   marginTop: -15,
-  marginBottom: -30,
+  marginBottom: -20,
   fontFamily: "Caveat",
   fontSize: "1.3em"
 };
 
 let editorBarStyles = {
   flex: 1,
-  backgroundColor: "#18181B"
+  backgroundColor: "#18181B",
+  display: "flex"
 };
 
 let previewBarStyles = {
@@ -23,7 +25,8 @@ let previewBarStyles = {
 };
 
 let editorTitleStyles = {
-  color: "#777069"
+  color: "#777069",
+  flex: 1
 };
 
 let previewTitleStyles = {
@@ -38,6 +41,7 @@ export class HeaderBar extends React.Component {
           <h3 id="editor-title" style={editorTitleStyles}>
             Editor
           </h3>
+          <EditorHeaderButton />
         </div>
         <div id="preview-bar" style={previewBarStyles}>
           <h3 id="preview-title" style={previewTitleStyles}>
