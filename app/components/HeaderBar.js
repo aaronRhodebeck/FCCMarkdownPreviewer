@@ -1,5 +1,6 @@
 import React from "react";
 import { EditorHeaderButton } from "./EditorHeaderButton";
+import { MarkupCheatsheetButton } from "../containers/MarkupCheatsheetButton";
 
 let sharedStyles = {
   display: "flex",
@@ -41,7 +42,7 @@ export class HeaderBar extends React.Component {
           <h3 id="editor-title" style={editorTitleStyles}>
             Editor
           </h3>
-          <EditorHeaderButton />
+          <MarkupCheatsheetButton />
         </div>
         <div id="preview-bar" style={previewBarStyles}>
           <h3 id="preview-title" style={previewTitleStyles}>
