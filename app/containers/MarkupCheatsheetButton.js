@@ -8,6 +8,7 @@ export class MarkupCheatsheetButton extends React.Component {
     return (
       <div style={{ float: "right" }}>
         <EditorHeaderButton onClick={this.onClick} />
+        <MarkupCheatsheetDisplay />
       </div>
     );
   }
