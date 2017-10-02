@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { EditorContainer } from "./EditorContainer";
 import { PreviewPane } from "../components/PreviewPane";
+import { HeaderBar } from "../components/HeaderBar";
 import * as Cheatsheet from "../markdownCheatsheet.js";
 import marked from "marked";
 import highlight from "highlightjs";
@@ -40,9 +41,9 @@ marked.setOptions({
 });
 
 // Styling for the div containing both components of the app
-var styles = {
+var appStyles = {
   display: "flex",
-  height: "100vh"
+  flex: 1
 };
 
 // Renders the Editor and Previewer
@@ -64,13 +65,25 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div style={styles}>
-        {/* Passes the markdownCheatsheet to the Editor for default text */}
-        <EditorContainer
-          markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()}
-          textHasChanged={this.editorTextChanged}
-        />
-        <PreviewPane html={this.state.htmlToDisplay} />
+      <div
+        style={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "stretch"
+        }}
+      >
+        <div id="title-bar">
+          <HeaderBar />
+        </div>
+        <div style={appStyles}>
+          {/* Passes the markdownCheatsheet to the Editor for default text */}
+          <EditorContainer
+            markdownCheatsheet={Cheatsheet.getFormattedCheatsheet()}
+            textHasChanged={this.editorTextChanged}
+          />
+          <PreviewPane html={this.state.htmlToDisplay} />
+        </div>
       </div>
     );
   }

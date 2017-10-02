@@ -8,7 +8,9 @@ var styles = {
   borderWidth: 2,
   borderColor: "gray",
   borderStyle: "solid",
-  margin: 0
+  borderTopWidth: 0,
+  marginTop: -20,
+  marginBottom: 0
 };
 
 // Presentation class to display passed in HTML requiring text
