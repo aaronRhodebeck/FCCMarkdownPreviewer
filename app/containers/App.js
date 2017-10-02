@@ -40,6 +40,14 @@ marked.setOptions({
   }
 });
 
+// Styling for the div containing both the app and the Header bar w/ titles
+let pageLayoutStyles = {
+  height: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "stretch"
+};
+
 // Styling for the div containing both components of the app
 var appStyles = {
   display: "flex",
@@ -65,14 +73,7 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "stretch"
-        }}
-      >
+      <div id="page-layout" style={pageLayoutStyles}>
         <div id="title-bar">
           <HeaderBar />
         </div>
