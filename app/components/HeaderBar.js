@@ -1,6 +1,7 @@
 import React from "react";
 import { EditorHeaderButton } from "./EditorHeaderButton";
 import { MarkupCheatsheetButton } from "../containers/MarkupCheatsheetButton";
+import { PreviewHeaderButton } from "../components/PreviewHeaderButton";
 
 let sharedStyles = {
   display: "flex",
@@ -22,7 +23,8 @@ let previewBarStyles = {
   borderWidth: 2,
   borderColor: "gray",
   borderStyle: "solid",
-  borderBottomWidth: 0
+  borderBottomWidth: 0,
+  display: "flex"
 };
 
 let editorTitleStyles = {
@@ -31,7 +33,8 @@ let editorTitleStyles = {
 };
 
 let previewTitleStyles = {
-  color: "#696977"
+  color: "#696977",
+  flex: 1
 };
 
 export class HeaderBar extends React.Component {
@@ -45,9 +48,11 @@ export class HeaderBar extends React.Component {
           <MarkupCheatsheetButton />
         </div>
         <div id="preview-bar" style={previewBarStyles}>
+          <PreviewHeaderButton text="Save w/out styling" position="right" />
           <h3 id="preview-title" style={previewTitleStyles}>
             Preview
           </h3>
+          <PreviewHeaderButton text="Save w/ styling" position="left" />
         </div>
       </div>
     );
