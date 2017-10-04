@@ -66,7 +66,9 @@ export class App extends React.Component {
   }
 
   updateDimensions() {
-    this.setState({ height: document.documentElement.clientHeight });
+    this.setState({
+      height: document.documentElement.clientHeight - 1
+    });
   }
 
   editorTextChanged(textInEditor) {
@@ -89,7 +91,8 @@ export class App extends React.Component {
 
   render() {
     let dimensions = {
-      height: this.state.height
+      height: this.state.height,
+      minHeight: this.state.height
     };
     return (
       <div

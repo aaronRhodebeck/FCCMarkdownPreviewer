@@ -7,9 +7,9 @@ let sharedStyles = {
   display: "flex",
   textAlign: "center",
   marginTop: -15,
-  marginBottom: -20,
   fontFamily: "Caveat",
-  fontSize: "1.3em"
+  fontSize: "1.3em",
+  zIndex: "1"
 };
 
 let editorBarStyles = {
@@ -48,11 +48,9 @@ export class HeaderBar extends React.Component {
           <MarkupCheatsheetButton />
         </div>
         <div id="preview-bar" style={previewBarStyles}>
-          <PreviewHeaderButton text="Save w/out styling" position="right" />
           <h3 id="preview-title" style={previewTitleStyles}>
             Preview
           </h3>
-          <PreviewHeaderButton text="Save w/ styling" position="left" />
         </div>
       </div>
     );
