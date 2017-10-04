@@ -42,7 +42,6 @@ marked.setOptions({
 
 // Styling for the div containing both the app and the Header bar w/ titles
 let pageLayoutStyles = {
-  height: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "stretch"
@@ -58,8 +57,16 @@ var appStyles = {
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { htmlToDisplay: { __html: `<h1>Preview</h1>` } };
+    this.state = {
+      htmlToDisplay: { __html: `<h1>Preview</h1>` },
+      height: document.documentElement.clientHeight
+    };
     this.editorTextChanged = this.editorTextChanged.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
+  updateDimensions() {
+    this.setState({ height: document.documentElement.clientHeight });
   }
 
   editorTextChanged(textInEditor) {
@@ -71,9 +78,24 @@ export class App extends React.Component {
     return { __html: marked(markdown) };
   }
 
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
   render() {
+    let dimensions = {
+      height: this.state.height
+    };
     return (
-      <div id="page-layout" style={pageLayoutStyles}>
+      <div
+        id="page-layout"
+        style={Object.assign({}, pageLayoutStyles, dimensions)}
+      >
         <div id="title-bar">
           <HeaderBar />
         </div>
