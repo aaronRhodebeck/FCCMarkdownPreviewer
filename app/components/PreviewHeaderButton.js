@@ -16,7 +16,6 @@ export class PreviewHeaderButton extends React.Component {
 
     if (position === "left") {
       styles.marginRight = 25;
-      console.log("called");
     }
     return styles;
   }
